@@ -1,5 +1,3 @@
-# Wazuh-SIEM-FIM-LAB
-Two-laptop Wazuh SIEM/XDR home lab demonstrating endpoint monitoring and File Integrity Monitoring.
 # Wazuh SIEM & File Integrity Monitoring Lab
 
 ## Overview
@@ -18,8 +16,6 @@ I also set up **File Integrity Monitoring (FIM)** to watch a folder on the Windo
 ---
 
 ## Lab Setup
-
-The lab used two computers.
 
 ### Linux Laptop
 
@@ -95,9 +91,9 @@ The Wazuh Manager receives security information from the Windows Wazuh Agent.
 
 The Wazuh Dashboard allows me to view this information.
 
-### Screenshot 01 — Wazuh Dashboard Overview
+## Screenshot 01 — Wazuh Dashboard Overview
 
-![Wazuh Dashboard Overview](screenshots/01-wazuh-dashboard-overview.png)
+![Wazuh Dashboard Overview](01-wazuh-dashboard-overview.png)
 
 This is the main Wazuh screen.
 
@@ -107,9 +103,9 @@ It shows that my Windows laptop is connected to Wazuh. It also shows the alerts 
 
 ---
 
-### Screenshot 02 — Wazuh Manager Service Running
+## Screenshot 02 — Wazuh Manager Service Running
 
-![Wazuh Manager Service Running](screenshots/02-wazuh-manager-service-running.png)
+![Wazuh Manager Service Running](02-wazuh-manager-service-running.png)
 
 This screenshot shows the Wazuh Manager running on my Linux laptop.
 
@@ -125,9 +121,9 @@ The next step was setting up the Wazuh Agent on the Windows laptop.
 
 The Wazuh Agent collects information from the Windows computer and sends it to the Wazuh Manager.
 
-### Screenshot 03 — Wazuh Agent Status
+## Screenshot 03 — Wazuh Agent Status
 
-![Wazuh Agent Status](screenshots/03-wazuh-agent-status.png)
+![Wazuh Agent Status](03-wazuh-agent-status.png)
 
 This is the Wazuh Agent on my Windows laptop.
 
@@ -139,9 +135,9 @@ Private information, such as the Manager IP address and authentication key, was 
 
 ---
 
-### Screenshot 04 — Wazuh Agent Service PowerShell
+## Screenshot 04 — Wazuh Agent Service PowerShell
 
-![Wazuh Agent Service PowerShell](screenshots/04-wazuh-agent-service-powershell.png)
+![Wazuh Agent Service PowerShell](04-wazuh-agent-service-powershell.png)
 
 This screenshot shows PowerShell checking the Wazuh Agent service.
 
@@ -175,9 +171,9 @@ The `realtime="yes"` setting tells Wazuh to watch the folder for changes as they
 
 ---
 
-### Screenshot 05 — FIM Directory Configuration
+## Screenshot 05 — FIM Directory Configuration
 
-![FIM Directory Configuration](screenshots/05-fim-directory-configuration.png)
+![FIM Directory Configuration](05-fim-directory-configuration.png)
 
 This screenshot shows the Wazuh configuration file.
 
@@ -197,7 +193,7 @@ This tells Wazuh to watch that folder for changes in real time.
 
 After setting up FIM, I tested it by creating and changing a file inside the folder.
 
-For example, I created a test file:
+I created a test file:
 
 ```powershell
 New-Item "C:\Users\jalen\Downloads\WAZUHTEST\fim-test.txt"
@@ -217,9 +213,9 @@ These changes were used to see if Wazuh could detect what happened.
 
 After the file was created and changed, Wazuh detected the activity.
 
-### Screenshot 06 — FIM Events Added and Modified
+## Screenshot 06 — FIM Events Added and Modified
 
-![FIM Added and Modified Events](screenshots/06-fim-events-added-modified.png)
+![FIM Added and Modified Events](06-fim-events-added-modified.png)
 
 This screenshot shows Wazuh finding two changes.
 
@@ -235,9 +231,9 @@ The other event shows that the file was **modified**.
 
 Wazuh also allows me to open an event and see more information about what happened.
 
-### Screenshot 07 — FIM Event Details
+## Screenshot 07 — FIM Event Details
 
-![FIM Event Detail](screenshots/07-fim-event-detail.png)
+![FIM Event Detail](07-fim-event-detail.png)
 
 This screenshot shows more information about one of the file changes.
 
@@ -281,7 +277,7 @@ Wazuh Dashboard
 Modified Event
 ```
 
-This showed that the entire system was working from the Windows endpoint all the way to the Wazuh Dashboard.
+This showed that the entire system was working from the Windows computer all the way to the Wazuh Dashboard.
 
 ---
 
@@ -303,7 +299,7 @@ I was able to:
 * See the file modification event in Wazuh
 * Open the event and view more details
 
-The test showed that Wazuh could detect file changes on the Windows endpoint.
+The test showed that Wazuh could detect file changes on the Windows computer.
 
 ---
 
@@ -359,16 +355,14 @@ The event was investigated
 
 # Skills Demonstrated
 
-Through this project, I practiced:
-
-### SIEM
+## SIEM
 
 * Setting up Wazuh
 * Using the Wazuh Dashboard
 * Viewing security events
 * Investigating alerts
 
-### File Integrity Monitoring
+## File Integrity Monitoring
 
 * Setting up FIM
 * Using Syscheck
@@ -377,7 +371,7 @@ Through this project, I practiced:
 * Detecting modified files
 * Viewing file change details
 
-### Windows
+## Windows
 
 * Installing a security agent
 * Checking Windows services
@@ -385,14 +379,14 @@ Through this project, I practiced:
 * Editing configuration files
 * Working with Windows file paths
 
-### Linux
+## Linux
 
 * Installing and running Wazuh Manager
 * Checking Linux services
 * Using the Linux terminal
 * Managing security software
 
-### Troubleshooting
+## Troubleshooting
 
 * Fixing configuration problems
 * Handling Windows permissions
